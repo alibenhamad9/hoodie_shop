@@ -9,6 +9,9 @@ COPY inscription.html  /usr/share/nginx/html/
 COPY produits.html  /usr/share/nginx/html/
 COPY style.css /usr/share/nginx/html/
 COPY javascript.js /usr/share/nginx/html/
+COPY hoodie-noir.png  /usr/share/nginx/html/images/
+COPY hoodie-gris.png  /usr/share/nginx/html/images/
+COPY hoodie-blanc.png /usr/share/nginx/html/images/
 
 EXPOSE 80
 
