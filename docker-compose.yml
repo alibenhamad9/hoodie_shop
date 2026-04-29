@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  # Service principal : votre site web
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mon-site-web
+    ports:
+      - "8080:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
