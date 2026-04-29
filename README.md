@@ -105,3 +105,28 @@ Merge
 Version finale
 🔗 GitHub
 👉 (https://github.com/alibenhamad9/hoodie.git)
+
+
+## 🐳 Docker & Développement
+
+### Prérequis
+- Docker Desktop (version 24.0+)
+- Docker Compose (inclus avec Docker Desktop)
+
+### Démarrer l'Application
+\`\`\`bash
+docker-compose up --build
+\`\`\`
+
+Puis ouvrez http://localhost:8080
+
+### Arrêter l'Application
+\`\`\`bash
+docker-compose down
+\`\`\`
+
+### Commandes Utiles
+- Voir les images : docker images
+- Voir les conteneurs : docker ps -a
+- Logs en temps réel : docker logs -f mon-site-web
+- Arrêter un conteneur : docker stop mon-site-web
