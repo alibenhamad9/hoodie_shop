@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoodie Shop - Produits</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <header>
+    <h1>Hoodie Shop</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="produits.html">Produits</a>
+    </nav>
+  </header>
+
+  <section class="products-section">
+    <h2>Nos Hoodies</h2>
+    <div class="products-container">
+      <div class="product-card">
+        <img src="hoodie-noir.png" alt="Hoodie noir">
+        <h3>Hoodie Noir</h3>
+        <p>Prix : 80 DT</p>
+        <button onclick="commander('Hoodie Noir')" class="btn">Commander</button> 
+      </div>
+      <div class="product-card">
+        <img src="hoodie-gris.png" alt="Hoodie gris">
+        <h3>Hoodie Gris</h3>
+        <p>Prix : 75 DT</p>
+        <button onclick="commander('Hoodie Gris')" class="btn">Commander</button>
+      </div>
+
+<div class="product-card">
+        <img src="hoodie-blanc.png" alt="Hoodie blanc">
+        <h3>Hoodie Blanc</h3>
+        <p>Prix : 85 DT</p>
+        <button onclick="commander('Hoodie Blanc')" class="btn">Commander</button>
+      </div>
+    </div>
+    <p id="commandeMessage"></p>
+
+  <footer>
+    <p>&copy; 2026 Hoodie Shop - Tous droits réservés</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
