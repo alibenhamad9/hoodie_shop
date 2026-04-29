@@ -21,7 +21,7 @@ jobs:
         echo "Vérifying HTML/CSS files..."
         [ -f index.html ] && echo "✓ index.html found" || exit 1
         [ -f style.css ] && echo "✓ style.css found" || exit 1
-        [ -f app.js ] && echo "✓ app.js found" || exit 1
+        [ -f javascript.js ] && echo "✓ app.js found" || exit 1
     
     # Étape 3: Construire l'image Docker
     - name: Build Docker Image
