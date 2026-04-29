@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Étape 1: Récupérer le code
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    
+    # Étape 2: Valider les fichiers HTML/CSS
+    - name: Validate HTML/CSS
+      run: |
+        echo "Vérifying HTML/CSS files..."
+        [ -f index.html ] && echo "✓ index.html found" || exit 1
+        [ -f style.css ] && echo "✓ style.css found" || exit 1
+        [ -f app.js ] && echo "✓ app.js found" || exit 1
+    
+    # Étape 3: Construire l'image Docker
+    - name: Build Docker Image
+      run: |
+        docker build -t mon-site:latest .
+        docker images
+    
+    # Étape 4: Tester l'image (lancer le conteneur)
+    - name: Test Docker Container
+      run: |
+        docker run -d -p 8080:80 --name test-container mon-site:latest
+        sleep 2
+        curl -f http://localhost:8080 || exit 1
+        echo "✓ Container is running and responding!"
+    
+    # Bonus: Scanner de vulnérabilités
+    - name: Security Scan
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'mon-site:latest'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+      continue-on-error: true
